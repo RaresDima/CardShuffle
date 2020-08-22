@@ -5,17 +5,30 @@ from enum import Enum
 from typing import *
 
 
-##### CONFIG #####
+############################
+########## CONFIG ##########
+############################
 
+# Every N instructions a blank line will be printed.
+# This makes the output look cleaner.
 BLANK_LINE_EVERY_N_INSTRUCTIONS = 3
 
+# This string will be printed when the current card should be placed onto a
+# new stack.
 NEW_STACK_INSTRUCTION_TEMPLATE = 'NEW'
 
+# This string will be printed when the current card should be placed onto an
+# existing stack. The index (1-based) of the stack can be referred to by using `%i`
 ADD_CARD_TO_STACK_INSTRUCTION_TEMPLATE = '%i'
 
+# This string will be printed when an existing stack should be placed on top
+# of another existing stack. The index (1-based) of the stack to be placed on
+# top can be referred to by using `%i`. The index (1-based) of the stack that
+# will be on the bottom can be referred to by using `%j`.
 PLACE_STACK_ON_TOP_OF_OTHER_STACK_INSTRUCTION_TEMPLATE = '%i OVER %j'
 
-##################
+############################
+############################
 
 
 class Stack(list):
