@@ -29,3 +29,14 @@ The easyest way to remember this is to simply know that `stack i` will always me
 # Documentation
 
 The `Config` section at the top of `card_shuffle.py` contains the documentation related to customizing the output.
+
+# Observations
+
+- The number of stacks that end up simultaneously existing is usually somewhere between `n/3` and `n/4`.
+
+- The numver of steps that are necessary is usually about `1.5 * n` (give or take 10%).
+
+- Due to human error you might forget some instructions or do some instructions multiple times. In this case you will most likely see some instructions near the end that are impossible to complete (e.g. "put stack 5 on top of stack 9" but there are only 7 stacks). I tend to perform these as best I can:
+    - If I am out of cards and am instructed to add a card to a stack I just skip that instruction. 
+    - If the index of the indicated stack is larger than how many stacks actually exist (e.g. you need to add a card to stack 6 but there are only 4 stacks) I simply use the last stack.
+    - If I am left with more than 1 stack at the end of the algorithm I simply place them on top of each other in a random order since usually you dont end up with more than 2-3-4 stacks.
