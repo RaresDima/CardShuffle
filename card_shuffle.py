@@ -113,7 +113,10 @@ deck = Stack(range(NUM_CARDS, 0, -1))
 final_shuffle = deck.copy()
 random.shuffle(final_shuffle)
 
-step_printer = StepPrinter(break_frequency = BLANK_LINE_EVERY_N_INSTRUCTIONS)
+step_printer = StepPrinter(break_frequency = BLANK_LINE_EVERY_N_INSTRUCTIONS,
+                           new_stack_template = NEW_STACK_INSTRUCTION_TEMPLATE,
+                           add_to_stack_template = ADD_CARD_TO_STACK_INSTRUCTION_TEMPLATE,
+                           combine_stacks_template = PLACE_STACK_ON_TOP_OF_OTHER_STACK_INSTRUCTION_TEMPLATE)
 
 n = 0
 
