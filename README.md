@@ -5,3 +5,5 @@ This project came to be because traditional card shuffling methods are either:
 - Damaging do the cards (e.g. the cards are repeatedly and excessively bent).
 
 This project implements an algorithm that generates a random permutation for a deck of `n` cards and then gives step-by-step instructions on how to obtain that shuffle by either placing the cards on stacks or placing existing stacks on top of each other.
+
+The `Config` section at the top of `main.py` contains the documentation related to customizing the output.
