@@ -10,7 +10,7 @@ This project implements an algorithm that generates a random permutation for a d
 
 ## `random_action_card_shuffle.py`
 
-**This is the recommended algorithm to use. It uses less physical space on the table and takes less time to perform.**
+**This is the recommended algorithm to use. It uses much less physical space on the table and takes 30-40% less time to perform.**
 
 Simply run the script as you would run any other script (`python random_action_card_shuffle.py` for instance). 
 
@@ -27,10 +27,19 @@ Then a sequence of instructions will be printed to the console. These instructio
 Simply take the deck of cards in your hand and follow the instructions by placing the top card from the deck as instructed. 
 It is advised to have ample space on the table. 
 
+At the end you will be instructed to simply gather up the stacks in a random order.
+
 NOTE: When 2 stacks are combined the number of stacks decreases by 1. The indices of the stacks to not change, where one stack disappears an empty slot remains. When instructed to create a new stack, use the first available empty slot.
 
 E.g. You are instructed to place stack 2 over stack 4. After doing this, since stack 2 no longer "exists", the spot on the physical table where stack 2 was is now empty. You can use it next time you are asked to create a new stack.
 
+##### Observations
+
+- The number of steps that are necessary is usually about `1.1 * n` (give or take 10%).
+
+- Due to human error you might forget some instructions or do some instructions multiple times. In this case you will most likely see some instructions near the end that are impossible to complete (e.g. "put stack 5 on top of stack 9" but there are only 7 stacks). I tend to perform these as best I can:
+    - If I am out of cards and am instructed to add a card to a stack I just skip that instruction. 
+    - If the index of the indicated stack is larger than how many stacks actually exist (e.g. you need to add a card to stack 6 but there are only 4 stacks) I simply use the last stack.
 
 ## `card_shuffle.py`
 
@@ -56,7 +65,7 @@ E.g. You are instructed to place stack 2 over stack 4. After doing this, since s
 
 The easiest way to remember this is to simply know that `stack i` will always mean the `i-th` stack that is currently on the table.
 
-#### Observations
+##### Observations
 
 - The number of stacks that end up simultaneously existing is usually somewhere between `n/3` and `n/4`.
 
