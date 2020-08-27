@@ -13,26 +13,26 @@ BLANK_LINE_EVERY_N_INSTRUCTIONS = 3
 
 # This string will be printed when the current card should be placed onto a
 # new stack.
-NEW_STACK_INSTRUCTION_TEMPLATE = 'NEW'
+NEW_STACK_INSTRUCTION_TEMPLATE = 'CREATE NEW STACK'
 
 # This string will be printed when the current card should be placed onto an
 # existing stack. The index (1-based) of the stack can be referred to by using `%i`
-ADD_CARD_TO_STACK_INSTRUCTION_TEMPLATE = '%i'
+ADD_CARD_TO_STACK_INSTRUCTION_TEMPLATE = 'ADD CARD TO STACK %i'
 
 # This string will be printed when an existing stack should be placed on top
 # of another existing stack. The index (1-based) of the stack to be placed on
 # top can be referred to by using `%i`. The index (1-based) of the stack that
 # will be on the bottom can be referred to by using `%j`.
-PLACE_STACK_ON_TOP_OF_OTHER_STACK_INSTRUCTION_TEMPLATE = '%i OVER %j'
+PLACE_STACK_ON_TOP_OF_OTHER_STACK_INSTRUCTION_TEMPLATE = 'PLACE STACK %i OVER STACK %j'
 
 # This string will be printed when a random number of cards from the bottom of
 # the deck should be pulled out and placed on top of the deck.
 # In other words just pull some cards from the bottom and add them on top.
-PULL_FROM_BOTTOM_INSTRUCTION_TEMPLATE = 'PULL'
+PULL_FROM_BOTTOM_INSTRUCTION_TEMPLATE = 'PULL OUT BOTTOM CARDS'
 
 # This string will be printed when the existing stacks need to be gathered up
 # in a random order to form the final deck.
-RANDOM_GATHER_INSTRUCTION_TEMPLATE = 'RANDOM GATHER'
+RANDOM_GATHER_INSTRUCTION_TEMPLATE = 'RANDOMLY GATHER ALL STACKS'
 
 ############################
 ############################
