@@ -10,6 +10,28 @@ This project implements an algorithm that generates a random permutation for a d
 
 ## `random_action_card_shuffle.py`
 
+**This is the recommended algorithm to use. It uses less physical space on the table and takes less time to perform.**
+
+Simply run the script as you would run any other script (`python random_action_card_shuffle.py` for instance). 
+
+You will be asked to input the number of cards to be shuffled and the number of stacks to be used.
+
+5 stacks is enough for a standard deck of 52 cards. 10 stacks is enough for massive 400+ card decks.
+
+Then a sequence of instructions will be printed to the console. These instructions are either:
+- Place the next card onto a new stack.
+- Place the next card onto an existing stack.
+- Place an existing stack on top of another existing stack.
+- Pull out the bottom cards from the deck and place them on top of the deck (there is no exact number of cards, here is where you also introduce a bit of randomness, try to pull out between a quarter and a third of the cards).
+
+Simply take the deck of cards in your hand and follow the instructions by placing the top card from the deck as instructed. 
+It is advised to have ample space on the table. 
+
+NOTE: When 2 stacks are combined the number of stacks decreases by 1. The indices of the stacks to not change, where one stack disappears an empty slot remains. When instructed to create a new stack, use the first available empty slot.
+
+E.g. You are instructed to place stack 2 over stack 4. After doing this, since stack 2 no longer "exists", the spot on the physical table where stack 2 was is now empty. You can use it next time you are asked to create a new stack.
+
+
 ## `card_shuffle.py`
 
 **This algorithm is an older version, it will be harder to perform by hand and take up more table space.**
@@ -38,7 +60,7 @@ The easiest way to remember this is to simply know that `stack i` will always me
 
 - The number of stacks that end up simultaneously existing is usually somewhere between `n/3` and `n/4`.
 
-- The numver of steps that are necessary is usually about `1.5 * n` (give or take 10%).
+- The number of steps that are necessary is usually about `1.5 * n` (give or take 10%).
 
 - Due to human error you might forget some instructions or do some instructions multiple times. In this case you will most likely see some instructions near the end that are impossible to complete (e.g. "put stack 5 on top of stack 9" but there are only 7 stacks). I tend to perform these as best I can:
     - If I am out of cards and am instructed to add a card to a stack I just skip that instruction. 
