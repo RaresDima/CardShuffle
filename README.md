@@ -8,6 +8,14 @@ This project implements an algorithm that generates a random permutation for a d
 
 # Usage
 
+## `random_action_card_shuffle.py`
+
+## `card_shuffle.py`
+
+**This algorithm is an older version, it will be harder to perform by hand and take up more table space.**
+
+**Try to use `random_action_card_shuffle.py` instead if you just want a simple way to shuffle cards.**
+
 Simply run the script as you would run any other script (`python card_shuffle.py` for instance). 
 
 You will be asked to input the number of cards to be shuffled.
@@ -24,13 +32,9 @@ NOTE: When 2 stacks are combined the number of stacks decreases by 1. The indice
 
 E.g. You are instructed to place stack 2 over stack 4. After doing this, since stack 2 no longer "exists", the stack that was in the 3rd spot is not stack 2, stack 4 is also stack 3 now and so on. 
 
-The easyest way to remember this is to simply know that `stack i` will always mean the `i-th` stack that is currently on the table.
+The easiest way to remember this is to simply know that `stack i` will always mean the `i-th` stack that is currently on the table.
 
-# Documentation
-
-The `Config` section at the top of `card_shuffle.py` contains the documentation related to customizing the output.
-
-# Observations
+#### Observations
 
 - The number of stacks that end up simultaneously existing is usually somewhere between `n/3` and `n/4`.
 
@@ -40,3 +44,9 @@ The `Config` section at the top of `card_shuffle.py` contains the documentation 
     - If I am out of cards and am instructed to add a card to a stack I just skip that instruction. 
     - If the index of the indicated stack is larger than how many stacks actually exist (e.g. you need to add a card to stack 6 but there are only 4 stacks) I simply use the last stack.
     - If I am left with more than 1 stack at the end of the algorithm I simply place them on top of each other in a random order since usually you dont end up with more than 2-3-4 stacks.
+
+
+# Documentation
+
+The `Config` section at the top of `card_shuffle.py` and `random_action_card_shuffle.py` contains the documentation related to customizing the output.
+
